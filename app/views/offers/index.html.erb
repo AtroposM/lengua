@@ -1,19 +1,30 @@
 <h1> Offers </h1>
 
-<% @offers.each do |offer| %>
-  <p> <%= offer.language %> </p>
-  <p> <%= offer.level %> </p>
-  <p><%= offer.date %> </p>
-  <p> <%= offer.duration %> </p>
-  <%= link_to 'Details', offer_path(offer) %>
-  <% if policy(offer).edit?  %>
-    <%= link_to 'Update', edit_offer_path(offer) %>
-  <% end  %>
-  <% if policy(offer).destroy?  %>
-    <%= link_to 'Destroy', offer, method: :delete, data: {confirm: "Are you sure?"} %>
-  <% end  %>
-  <% end  %>
-
 <% if policy(Offer).new? %>
-  <%= link_to 'New Offer', new_offer_path %>
+  <%= link_to 'New Offer', new_offer_path, class: "btn btn-gradient" %>
+<% end  %>
+<% @offers.each do |offer| %>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title"><strong>Language: </strong><%= offer.language %></h3>
+        <p class="card-text"><strong>Level: </strong><%= offer.level %> </p>
+        <p class="card-text"><strong>Date or day: </strong><%= offer.date %>  </p>
+        <p class="card-text"><strong>Duration: </strong><%= offer.duration %> </p>
+        <%= link_to 'Details', offer_path(offer), class: "btn btn-ghost" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% if policy(offer).edit?  %>
+  <%= link_to 'Update', edit_offer_path(offer) %>
+<% end  %>
+<% if policy(offer).destroy?  %>
+  <%= link_to 'Destroy', offer, method: :delete, data: {confirm: "Are you sure?"} %>
+<% end  %>
 <% end  %>
