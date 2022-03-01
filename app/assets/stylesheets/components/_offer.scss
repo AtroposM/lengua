@@ -1,0 +1,30 @@
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.profile-container {
+  background-color: #FFE8D5;
+  color: purple;
+  border-radius: 15px;
+  border-color: #cb997e;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.wrapper {
+  background-color: #ffd7ba;
+  color: #22223b;
+  border-radius: 15px;
+  border-color: rgb(3, 2, 2);
+  padding: 20px;
+  flex-grow: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.btn-container {
+  vertical-align: bottom;
+  padding: 10px;
+}

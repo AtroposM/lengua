@@ -1,25 +1,49 @@
+<div class="flex-container">
+  <div class="profile-container"
+  >
+    <h1><strong>Profile details</strong></h1>
+    <p>
+      <%= current_user.first_name %>
+      <%= current_user.last_name %>
+      <br>
+      <%= current_user.email %>
+    </p>
+  </div>
+  <div class="wrapper">
+    <div class="flex-container">
+      <div class="offer-container">
 
+        <div class="offer-info">
+          <h1><Strong>Offer details</Strong></h1>
+          <p>
+            <strong> Name: </strong>
+            <%= @offer.language %>
+          </p>
 
-<p>
+          <p>
+            <strong> Level: </strong>
+            <%= @offer.level %>
+          </p>
 
-<strong> Name: </strong>
-<%= @offer.language %>
-</p>
+          <p>
+            <strong> Date: </strong>
+            <%= @offer.date %>
+          </p>
 
-<p>
-  <strong> level </strong>
-  <%= @offer.level %>
-</p>
+          <p>
+            <strong> Duration: </strong>
+            <%= @offer.duration %>
+          </p>
+        </div>
 
+        <div class="offer-picture">
+          <%= image_tag "Japanese.png" %>
+        </div>
+      </div>
+    </div>
 
-<p>
-  <strong> Date </strong>
-  <%= @offer.date %>
-</p>
-
-<p>
-  <strong> duration </strong>
-  <%= @offer.duration %>
-</p>
-
-<%= link_to 'Offers', offers_path %>
+    <div class="btn-container">
+      <%= link_to 'Offers', offers_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
