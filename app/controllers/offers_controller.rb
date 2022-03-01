@@ -6,6 +6,7 @@ class OffersController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -24,6 +25,17 @@ class OffersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @offer.update(offer_params)
+    if @offer.save!
+      redirect_to @offer, notice: "Your offer was updated"
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @offer.destroy
