@@ -4,5 +4,7 @@ class Offer < ApplicationRecord
 
   validates :date, inclusion: { in: %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday),
   }
-  validates :duration, presence: true
+  validates :duration, :date, :level, :language, presence: true
+
+
 end
