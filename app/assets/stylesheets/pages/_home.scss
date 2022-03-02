@@ -1,1 +1,56 @@
 // Specific CSS for your home-page
+.form_countainer {
+ padding-top: 20px;
+ background-color: pink;
+}
+
+select {
+  width: 120px;
+  padding: 4px;
+  text-align: center;
+}
+
+.form-element {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.btn.btn-primary {
+  background: #e8b85a;
+  border-color: white;
+  justify-content: space-between;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  color: black;
+  font-size: large;
+}
+
+#submit-form {
+  margin-left: 20px;
+  width: 97%;
+  margin-right: 20px;
+  padding: 15px;
+  }
+
+h1 {
+  color: #e8b85a;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 312px;
+  opacity: .7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 38px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
