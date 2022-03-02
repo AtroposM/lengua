@@ -1,6 +1,3 @@
-<div>
-  <h1>
-</div>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_url('homepage')%>);">
   <div class="container">
@@ -9,28 +6,34 @@
   </div>
 </div>
 
-<div class= "homepage_form">
+<div class="container">
   <%= form_tag(offers_path, method: :get) do %>
-    <div class='d-flex'>
+    <div class='form-element'>
       <%= label_tag('Which language do you want to practice?') %>
       <%= select_tag(:language, options_for_select([ ['French', 'French'], ['English', 'English'], ['Spanish', 'Spanish'], ['Chinese', 'Chinese'], ['Japanese', 'Japanese'], ['German', 'German'], ['Arabic', 'Arabic']])) %>
     </div>
 
-    <div class='d-flex'>
+    <div class='form-element'>
       <%= label_tag('What level do you want your language partner to be?') %>
       <%= select_tag(:level, options_for_select([ ['Native', 'Native'], ['Advanced', 'Advanced'], ['Intermediate','Intermediate']]))%>
     </div>
 
-    <div class='d-flex'>
+    <div class='form-element'>
       <%= label_tag('Which day of the week do you want to meet?') %>
       <%= select_tag(:date, options_for_select([ ['Monday', 'Monday' ], ['Tuesday', 'Tuesday'], ['Wednesday', 'Wednesday'],['Thursday', 'Thursday'], ['Friday', 'Friday'], ['Saturday', 'Sunday']])) %>
     </div>
 
-    <div class='d-flex'>
+    <div class='form-element'>
       <%= label_tag('How long do you want to meet for?') %>
       <%= select_tag(:duration, options_for_select([ ['1 hour','1 hour'], ['2 hour','2 hour'], ['30 minutes', '30 minutes']])) %>
     </div>
-
-      <%= submit_tag('Search', class: "btn btn-primary")  %>
+    <div class=''>
+      <%= submit_tag('Search', id:"submit-form", class: "btn btn-primary")  %>
+    </div>
     <% end %>
+</div>
+<br>
+<br>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('friends')%>);">
+  Featured Profiles
 </div>
