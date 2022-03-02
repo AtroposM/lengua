@@ -15,7 +15,7 @@ class OffersController < ApplicationController
   end
 
   def show
-
+    @booking = Booking.new
   end
 
   def new
@@ -58,6 +58,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:language, :level, :date, :duration)
+    params.require(:offer).permit(:language, :level, :date, :duration, :address)
   end
 end
