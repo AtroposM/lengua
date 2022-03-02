@@ -4,6 +4,11 @@
   margin-top: 10px;
 }
 
+.offer-info {
+  flex-grow: 2;
+}
+
+
 .profile-container {
   background-color: #FFE8D5;
   color: purple;
@@ -13,18 +18,30 @@
   margin-left: 20px;
 }
 
-.wrapper {
+.offer-container {
   background-color: #ffd7ba;
   color: #22223b;
   border-radius: 15px;
   border-color: rgb(3, 2, 2);
   padding: 20px;
+  flex-grow: 0.8;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.offer-picture {
   flex-grow: 1;
-  margin-left: 20px;
-  margin-right: 20px;
+}
+
+.offer-img {
+  height: 280px;
 }
 
 .btn-container {
   vertical-align: bottom;
   padding: 10px;
+}
+
+.other-offer-card {
+  margin: 25px;
 }
