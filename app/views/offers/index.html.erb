@@ -6,6 +6,11 @@
 
 <% @offers.each do |offer| %>
 
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
@@ -17,7 +22,10 @@
         <p class="card-text"><strong>Level: </strong><%= offer.level %> </p>
         <p class="card-text"><strong>Date or day: </strong><%= offer.date %>  </p>
         <p class="card-text"><strong>Duration: </strong><%= offer.duration %> </p>
-        <p class="card-text"><strong>Created by: </strong><%= offer.user.first_name %> </p>
+
+        <p class="card-text"><strong>Address</strong><%= offer.address %> </p>
+ colonnes excel
+
         <%= link_to 'Details', offer_path(offer), class: "btn btn-ghost" %>
       </div>
     </div>
