@@ -36,7 +36,8 @@ duration = ['1 hour', '2 hour', '30 minutes']
     language: language.sample,
     level: level.sample,
     date: date.sample,
-    duration: duration.sample
+    duration: duration.sample,
+    address: Faker::Address.full_address,
   )
   offer.save!
 end
