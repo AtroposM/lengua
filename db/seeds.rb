@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-Offer.destroy_all
 User.destroy_all
+Offer.destroy_all
+
 
 puts 'creating 50 fake users...'
 50.times do
