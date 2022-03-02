@@ -3,6 +3,7 @@
 <% if policy(Offer).new? %>
   <%= link_to 'New Offer', new_offer_path, class: "btn btn-gradient" %>
 <% end  %>
+
 <% @offers.each do |offer| %>
 
 <div id="map"
@@ -21,7 +22,10 @@
         <p class="card-text"><strong>Level: </strong><%= offer.level %> </p>
         <p class="card-text"><strong>Date or day: </strong><%= offer.date %>  </p>
         <p class="card-text"><strong>Duration: </strong><%= offer.duration %> </p>
+
         <p class="card-text"><strong>Address</strong><%= offer.address %> </p>
+ colonnes excel
+
         <%= link_to 'Details', offer_path(offer), class: "btn btn-ghost" %>
       </div>
     </div>
