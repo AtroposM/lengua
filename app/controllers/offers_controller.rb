@@ -3,6 +3,7 @@ class OffersController < ApplicationController
 
   def index
     @offers = policy_scope(Offer).order(created_at: :desc)
+
      # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @offers.geocoded.map do |offer|
       {
