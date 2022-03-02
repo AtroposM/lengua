@@ -62,7 +62,13 @@
 </div>
 
   <div class="other-offer-card">
-    <p>Other offer(s) by <%= @offer.user.first_name %></p>
-    <%= @offer.user.offers %>
+
+
+    <p>Other offer(s) by  <%= @offer.user.first_name %></p>
+    <% @offer.user.offers.each do |offer| %>
+    <p>
+    <%= offer.language %></p>
+    <% end  %>
+
 
   </div>
