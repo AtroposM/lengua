@@ -5,10 +5,16 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    # @booking.user = params[:booking][:user]
+    offer = Offer.find(params[:offer_id].to_i)
+    @booking.offer = offer
+    @booking.user = current_user
+
+    authorize @booking
+
     if @booking.save!
-      redirect_to @booking, notice: "New booking was created"
-    else
-      render :new
+      redirect_to dashboard_url, notice: "New booking was created"
+
     end
   end
 
