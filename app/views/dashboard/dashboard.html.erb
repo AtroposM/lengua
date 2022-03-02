@@ -1,1 +1,45 @@
 <h1>Dashboard</h1>
+
+<h2>Offer summary</h2>
+<table class="table table-striped">
+  <tr>
+    <th>Language</th>
+    <th>Level</th>
+    <th>Date</th>
+    <th>Meeting with</th>
+    <th>Status</th>
+  </tr>
+
+  <% current_user.offers.each do |offer| %>
+  <tr>
+    <td><%= offer.language %></td>
+    <td><%= offer.level %></td>
+    <td><%= offer.date %></td>
+    <td><%= offer.user.first_name %></td>
+    <td>Completed</td>
+  </tr>
+  <% end %>
+
+</table>
+
+<h2>Booking summary</h2>
+<table class="table table-striped">
+  <tr>
+    <th>Language</th>
+    <th>Level</th>
+    <th>Date</th>
+    <th>Meeting with</th>
+    <th>Status</th>
+  </tr>
+
+  <% current_user.bookings.each do |booking| %>
+  <tr>
+    <td><%= booking.offer.language %></td>
+    <td><%= booking.offer.level %></td>
+    <td><%= booking.offer.date %></td>
+    <td><%= booking.offer.user.first_name %></td>
+    <td>Completed</td>
+  </tr>
+  <% end %>
+
+</table>

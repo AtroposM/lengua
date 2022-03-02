@@ -43,13 +43,26 @@
 
     <div class="btn-container">
       <%= link_to 'Offers', offers_path, class: "btn btn-primary" %>
-      <button type="button" class="btn btn-primary">Book Now</button>
+
+    <div class="container">
+      <%= simple_form_for [@offer,@booking] do |f| %>
+        <%= f.hidden_field :language, value: @offer.language%>
+        <%= f.hidden_field :level, value: @offer.level%>
+        <%= f.hidden_field :date, value: @offer.date%>
+        <%= f.hidden_field :duration, value: @offer.duration%>
+        <%= f.hidden_field :address, value: @offer.address%>
+
+        <%= f.hidden_field :user, value: @offer.user.id%>
+
+        <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
+      <% end %>
+     </div>
     </div>
   </div>
 </div>
 
   <div class="other-offer-card">
     <p>Other offer(s) by <%= @offer.user.first_name %></p>
-    <%= @offer.user.offers %>%
+    <%= @offer.user.offers %>
 
   </div>
