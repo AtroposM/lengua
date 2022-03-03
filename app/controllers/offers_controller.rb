@@ -2,7 +2,14 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
   def index
-    @offers = policy_scope(Offer).order(created_at: :desc)
+    if params[:commit].present?
+
+      @offers = policy_scope(Offer).where(language: params[:language]).where(level: params[:level]).where(date: params[:date]).where(duration: params[:duration])
+
+    else
+      @offers = policy_scope(Offer)
+    end
+
 
      # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @offers.geocoded.map do |offer|
