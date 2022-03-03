@@ -18,17 +18,14 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-    @booking.update(booking_params)
-    if @booking.save!
-      redirect_to @booking, notice: "Your booking was updated"
-    else
-      render :edit
-    end
-  end
+  # def update
+  #   @booking.update(booking_params)
+  #   if @booking.save!
+  #     redirect_to @booking, notice: "Your booking was updated"
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   def destroy
     @booking.destroy
@@ -36,7 +33,7 @@ class BookingsController < ApplicationController
 
 
   private
-  def set_offer
+  def set_booking
     @booking = Booking.find(params[:id])
   end
 
