@@ -1,10 +1,32 @@
 <div class="container">
 <%= simple_form_for(@offer) do |f| %>
-  <%= f.input :language %>
-  <%= f.input :level %>
-  <%= f.input :date %>
-  <%= f.input :duration %>
+  <div class="form-body">
+  <%= f.input :language, prompt: :translate,
+    input_html: { class: "styling" },
+    prompt: " Pick a language! ",
+    collection: [ "French", "German", "English", "Spanish", "Chinese","Japanese","Arabic"]
+  %>
+  <%= f.input :level,
+    input_html: { class: "styling" },
+    prompt: " Pick the level! ",
+    collection: ["Native", "Advanced", "Intermediate"]
+  %>
+
+  <%= f.input :date,
+    input_html: {class: "datepicker"}
+  %>
+
+  <%= f.input :duration,
+    input_html: { class: "styling" },
+    prompt: " How long do you want to learn? ",
+    collection: ["2 hours", "1 hour", "30 min"]
+  %>
   <%= f.input :address %>
-  <%= f.button :submit, class:'btn btn-primary' %>
+  </div>
+
+  <div class="btn-inline">
+    <%= link_to 'Back', offers_path, class:'btn btn-primary'%>
+    <%= f.button :submit, class:'btn btn-primary' %>
+  </div>
 <% end  %>
 </div>
