@@ -43,7 +43,6 @@ class OffersController < ApplicationController
   end
 
   def edit
-    @offer =
   end
 
   def update

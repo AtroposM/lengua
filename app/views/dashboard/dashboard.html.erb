@@ -19,8 +19,7 @@
     <td><%= offer.user.first_name %></td>
     <td>Pending</td>
     <td>
-      <%= link_to 'Edit', edit_offer_path(params[:id]), class:'btn btn-primary' %>
-      <%= link_to 'Back', offer_path(params[:id]), class:'btn btn-primary'%>
+      <%= link_to 'Edit', edit_offer_path(offer.id), class:'btn btn-primary' %>
     </td>
   </tr>
   <% end %>
@@ -45,7 +44,9 @@
     <td><%= booking.offer.date %></td>
     <td><%= booking.offer.user.first_name %></td>
     <td>Completed</td>
-    <td>Edit</td>
+    <td>
+      <%= link_to 'Edit', edit_offer_path(booking.offer.id), class:'btn btn-primary' %>
+    </td>
   </tr>
   <% end %>
 
