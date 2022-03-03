@@ -28,6 +28,7 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+
     authorize @offer
   end
 
@@ -36,17 +37,19 @@ class OffersController < ApplicationController
     @offer.user = current_user
     authorize @offer
     if @offer.save!
-      redirect_to @offer, notice: "Offer was created"
+      redirect_to dashboard_path, notice: "Offer was created"
     else
       render :new
     end
   end
 
   def edit
+    authorize @offer
   end
 
   def update
     @offer.update(offer_params)
+
     if @offer.save!
       redirect_to @offer, notice: "Your offer was updated"
     else

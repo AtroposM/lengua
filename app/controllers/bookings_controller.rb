@@ -23,6 +23,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
+
     if @booking.save!
       redirect_to @booking, notice: "Your booking was updated"
     else
@@ -31,12 +32,14 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    authorize @booking
     @booking.destroy
+    redirect_to dashboard_url, notice: "Booking was cancelled"
   end
 
 
   private
-  def set_offer
+  def set_booking
     @booking = Booking.find(params[:id])
   end
 
