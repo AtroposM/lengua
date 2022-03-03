@@ -15,7 +15,7 @@ puts 'creating 50 fake users...'
   user = User.new(
     first_name: Faker::Movies::StarWars.character,
     last_name: Faker::Creature::Animal.name,
-    address: Faker::Address.street_name,
+    address: "#{Faker::Address.building_number} #{Faker::Address.street_name} ",
     email: Faker::Internet.email,
     password: '123456'
   )
@@ -44,7 +44,7 @@ puts 'Creating 13 offers...'
     date: date.sample,
 
     duration: duration.sample,
-    address: Faker::Address.street_name,
+    address: "#{Faker::Address.building_number} #{Faker::Address.street_name}",
 
   )
   offer.save!
