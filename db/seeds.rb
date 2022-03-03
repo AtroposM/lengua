@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
@@ -14,7 +15,7 @@ puts 'creating 50 fake users...'
   user = User.new(
     first_name: Faker::Movies::StarWars.character,
     last_name: Faker::Creature::Animal.name,
-    address: Faker::Address.street_name,
+    address: "#{Faker::Address.building_number} #{Faker::Address.street_name}",
     email: Faker::Internet.email,
     password: '123456'
   )
@@ -38,7 +39,7 @@ duration = ['1 hour', '2 hour', '30 minutes']
     date: date.sample,
 
     duration: duration.sample,
-    address: Faker::Address.street_name,
+    address: "#{Faker::Address.building_number} #{Faker::Address.street_name}",
 
   )
   offer.save!
