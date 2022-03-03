@@ -4,7 +4,7 @@ class OffersController < ApplicationController
   def index
     if params[:commit].present?
       @offers = policy_scope(Offer).where(language: params[:language]).where(level: params[:level]).where(date: params[:date]).where(duration: params[:duration])
-    elsif params[:search][:query].present?
+    elsif params[:search].present?
       @offers = policy_scope(Offer).where("language ILIKE ?", "%#{params[:search][:query]}%")
     else
       @offers = policy_scope(Offer)

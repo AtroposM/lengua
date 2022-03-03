@@ -8,6 +8,7 @@
     <th>Date</th>
     <th>Meeting with</th>
     <th>Status</th>
+    <th>Action</th>
   </tr>
 
   <% current_user.offers.each do |offer| %>
@@ -16,7 +17,10 @@
     <td><%= offer.level %></td>
     <td><%= offer.date %></td>
     <td><%= offer.user.first_name %></td>
-    <td>Completed</td>
+    <td>Pending</td>
+    <td>
+      <%= link_to 'Edit', edit_offer_path(offer.id), class:'btn btn-primary' %>
+    </td>
   </tr>
   <% end %>
 
@@ -30,6 +34,7 @@
     <th>Date</th>
     <th>Meeting with</th>
     <th>Status</th>
+    <th>Action</th>
   </tr>
 
   <% current_user.bookings.each do |booking| %>
@@ -39,6 +44,9 @@
     <td><%= booking.offer.date %></td>
     <td><%= booking.offer.user.first_name %></td>
     <td>Completed</td>
+    <td>
+      <%= link_to 'Edit', edit_offer_path(booking.offer.id), class:'btn btn-primary' %>
+    </td>
   </tr>
   <% end %>
 
