@@ -21,14 +21,20 @@ puts 'creating 50 fake users...'
   user.save
 end
 
-# brianna = User.create!(first_name: 'Brianna', last_name: 'London', address: '19 Rue des Petites Champ, Paris France, 75001', email: 'brianna@gmail.com', password:'123456')
-# puts User.count
+puts "Creating 3 more user"
+alice = User.create!(first_name: 'Alice', last_name: 'Monet', address: '19 Rue des Petits Champs', email: 'alice@gmail.com', password:'123456')
+jean = User.create!(first_name: 'Jean', last_name: 'Dupont', address: '24 Rue de Sèvres', email: 'jean@gmail.com', password:'123456')
+chloe = User.create!(first_name: 'Chloe', last_name: 'Barbeau', address: '20 Rue Dussoubs', email: 'chloe@gmail.com', password:'123456')
+
+puts "#{User.count} users created"
 
 
 language = ['French', 'English', 'Spanish', 'Chinese', 'Japanese', 'German', 'Arabic']
-level = ['native', 'advanced', 'intermediate']
+level = ['Native', 'Advanced', 'Intermediate']
 date = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-duration = ['1 hour', '2 hour', '30 minutes']
+duration = ['1 hour', '2 hours', '30 minutes']
+
+puts 'Creating 13 offers...'
 
 10.times do
   offer = Offer.new(
@@ -44,7 +50,20 @@ duration = ['1 hour', '2 hour', '30 minutes']
   offer.save!
   sleep(1)
 end
-puts Offer.all
 
-# Offer.create!(user: brianna, language: 'english', level: 'native', date: 'Monday', duration: '1 hour')
-# puts Offer.last
+alice_offer = Offer.new(language: 'French', level: 'Native', date: 'Monday', duration: '1 hour')
+alice_offer.user = alice
+alice_offer.address = alice.address
+alice_offer.save!
+
+jean_offer = Offer.new(language: 'French', level: 'Native', date: 'Monday', duration: '1 hour')
+jean_offer.user = jean
+jean_offer.address = jean.address
+jean_offer.save!
+
+chloe_offer = Offer.new(language: 'French', level: 'Native', date: 'Monday', duration: '1 hour')
+chloe_offer.user = chloe
+chloe_offer.address = chloe.address
+chloe_offer.save!
+
+puts "#{Offer.count} offers created"
