@@ -1,8 +1,19 @@
-.mapboxgl-popup {
-  max-width: 200px;
+
+.notification {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
 }
 
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
+.notification .notification-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.notification p {
+  margin: 0;
+  line-height: 1.4;
 }

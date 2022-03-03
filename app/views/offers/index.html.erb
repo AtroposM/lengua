@@ -1,12 +1,12 @@
-<h1> Here are Lengua users that are happy to help you learn! </h1>
-
-<% if policy(Offer).new? %>
-  <h5>Do you also have time to share? Make a <%= link_to 'new offer!', new_offer_path %></h5>
-  <br>
-<% end  %>
-
+<div class="styles-title">
+  <h1> Here are Lengua users that are happy to help you learn! </h1>
+  <% if policy(Offer).new? %>
+    <h5>Do you also have time to share? Make a <%= link_to 'new offer!', new_offer_path %></h5>
+    <br>
+  <% end  %>
+</div>
 <div class="row row--no-padding">
-  <div class="col-6 col-md-6 col--padding">
+  <div class="col-3 col-md-6 col--padding">
     <% @offers.each do |offer| %>
       <div class="card-product">
         <img src="https://source.unsplash.com/random" />
@@ -26,7 +26,7 @@
       </div>
     <% end  %>
 </div>
-<div class="col-6 col-md-6 map-wrapper">
+<div class="col-3 col-md-6 map-wrapper">
   <div id="map"
     style="width: 100%; height: 900px;"
     data-markers="<%= @markers.to_json %>"
