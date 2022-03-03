@@ -1,53 +1,59 @@
-<h1>Dashboard</h1>
+<div class="wrapper">
+  <h1 class="text-center">Dashboard</h1>
 
-<h2>Offer summary</h2>
-<table class="table table-striped">
-  <tr>
-    <th>Language</th>
-    <th>Level</th>
-    <th>Date</th>
-    <th>Meeting with</th>
-    <th>Status</th>
-    <th>Action</th>
-  </tr>
+  <div class="dashboard-container">
+    <h3>Offer summary</h3>
+    <table class="table table-striped">
+      <tr>
+        <th>Language</th>
+        <th>Level</th>
+        <th>Date</th>
+        <th>Meeting with</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
 
-  <% current_user.offers.each do |offer| %>
-  <tr>
-    <td><%= offer.language %></td>
-    <td><%= offer.level %></td>
-    <td><%= offer.date %></td>
-    <td><%= offer.user.first_name %></td>
-    <td>Pending</td>
-    <td>
-      <%= link_to 'Edit', edit_offer_path(offer.id), class:'btn btn-primary' %>
-    </td>
-  </tr>
-  <% end %>
+      <% current_user.offers.each do |offer| %>
+      <tr>
+        <td><%= offer.language %></td>
+        <td><%= offer.level %></td>
+        <td><%= offer.date %></td>
+        <td><%= offer.user.first_name %></td>
+        <td>Pending</td>
+        <td>
+          <%= link_to 'Edit', edit_offer_path(offer.id), class:'btn btn-primary' %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 
-</table>
+  <div class="dashboard-container">
+    <h3>Booking summary</h3>
+    <table class="table table-striped">
 
-<h2>Booking summary</h2>
-<table class="table table-striped">
-  <tr>
-    <th>Language</th>
-    <th>Level</th>
-    <th>Date</th>
-    <th>Meeting with</th>
-    <th>Status</th>
-    <th>Action</th>
-  </tr>
+      <tr>
+        <th>Language</th>
+        <th>Level</th>
+        <th>Date</th>
+        <th>Meeting with</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
 
-  <% current_user.bookings.each do |booking| %>
-  <tr>
-    <td><%= booking.offer.language %></td>
-    <td><%= booking.offer.level %></td>
-    <td><%= booking.offer.date %></td>
-    <td><%= booking.offer.user.first_name %></td>
-    <td>Completed</td>
-    <td>
-      <%= link_to 'Edit', edit_offer_path(booking.offer.id), class:'btn btn-primary' %>
-    </td>
-  </tr>
-  <% end %>
+      <% current_user.bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.offer.language %></td>
+        <td><%= booking.offer.level %></td>
+        <td><%= booking.offer.date %></td>
+        <td><%= booking.offer.user.first_name %></td>
+        <td>Completed</td>
+        <td>
+          <%= link_to 'Cancel', booking, method: :delete, class:'btn btn-primary',data: {confirm: "Are you sure to cancel?"} %>
+        </td>
+      </tr>
+      <% end %>
 
-</table>
+    </table>
+  </div>
+</div>

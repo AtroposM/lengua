@@ -18,17 +18,23 @@ class BookingsController < ApplicationController
     end
   end
 
-  # def update
-  #   @booking.update(booking_params)
-  #   if @booking.save!
-  #     redirect_to @booking, notice: "Your booking was updated"
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def edit
+  end
+
+  def update
+    @booking.update(booking_params)
+
+    if @booking.save!
+      redirect_to @booking, notice: "Your booking was updated"
+    else
+      render :edit
+    end
+  end
 
   def destroy
+    authorize @booking
     @booking.destroy
+    redirect_to dashboard_url, notice: "Booking was cancelled"
   end
 
 
