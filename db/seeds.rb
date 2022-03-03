@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
@@ -23,7 +24,6 @@ end
 
 # brianna = User.create!(first_name: 'Brianna', last_name: 'London', address: '19 Rue des Petites Champ, Paris France, 75001', email: 'brianna@gmail.com', password:'123456')
 # puts User.count
-
 
 language = ['French', 'English', 'Spanish', 'Chinese', 'Japanese', 'German', 'Arabic']
 level = ['native', 'advanced', 'intermediate']
