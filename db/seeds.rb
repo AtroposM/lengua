@@ -46,7 +46,7 @@ puts 'Creating 13 offers...'
     date: date.sample,
 
     duration: duration.sample,
-    address: "#{Faker::Address.building_number} #{Faker::Address.street_name}",
+    address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
 
   )
   offer.save!
