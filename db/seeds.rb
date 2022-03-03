@@ -10,6 +10,8 @@ Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
+
+
 puts 'creating 50 fake users...'
 50.times do
   user = User.new(
