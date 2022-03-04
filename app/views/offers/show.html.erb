@@ -49,7 +49,7 @@
     <div class="btn-container">
       <%= link_to 'Back', offers_path, class: "btn btn-primary" %>
 
-      <div class="container">
+
       <%= simple_form_for [@offer,@booking] do |f| %>
         <%= f.hidden_field :language, value: @offer.language%>
         <%= f.hidden_field :level, value: @offer.level%>
@@ -66,7 +66,6 @@
       <% end %>
      </div>
     </div>
-  </div>
 </div>
 
   <div class="other-offer-card">
