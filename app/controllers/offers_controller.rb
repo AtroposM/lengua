@@ -8,6 +8,7 @@ class OffersController < ApplicationController
       @offers = policy_scope(Offer).where("language ILIKE ?", "%#{params[:search][:query]}%")
     else
       @offers = policy_scope(Offer)
+      puts "No available matches"
     end
 
 
