@@ -10,21 +10,25 @@
 
 
 .profile-container {
-  background-color: #FFE8D5;
+  background-color: #eee8e3;;
+  box-shadow:10px 5px 5px #6d6c6b ;
   color: purple;
   border-radius: 15px;
   border-color: #cb997e;
-  padding: 20px;
+  padding: 80px;
+  padding-top: 10px;
   margin-left: 20px;
+  flex-grow: 0.3;
 }
 
 .offer-container {
-  background-color: #ffd7ba;
+  background-color: #eee8e3;
   color: #22223b;
+  box-shadow:10px 5px 5px #6d6c6b ;
   border-radius: 15px;
   border-color: rgb(3, 2, 2);
   padding: 20px;
-  flex-grow: 0.8;
+  flex-grow: 0.5;
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -34,7 +38,13 @@
 }
 
 .offer-img {
-  height: 280px;
+  height: 100%;
+  width: 90%;
+}
+
+.offer-pic {
+  width: 90%;
+  justify-content: center;
 }
 
 .btn-container {
