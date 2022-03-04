@@ -1,6 +1,11 @@
 <div class="flex-container">
   <div class="profile-container">
     <h1><strong>Profile details</strong></h1>
+      <% if @offer.user.photo.key.nil?  %>
+      <%=  image_tag "default_profil.png"  %>
+      <% else  %>
+      <%=  cl_image_tag @offer.user.photo.key  %>
+      <% end  %>
     <p>
       <%= @offer.user.first_name %>
       <%= @offer.user.last_name %>
