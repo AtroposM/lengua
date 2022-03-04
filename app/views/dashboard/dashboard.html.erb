@@ -3,14 +3,14 @@
 
   <div class="dashboard-container">
     <h3>Offer summary</h3>
-    <table class="table table-striped">
+    <table class="table table-striped", style="width:100%">
       <tr>
-        <th>Language</th>
-        <th>Level</th>
-        <th>Date</th>
-        <th>Meeting with</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th style="width:15%">Language</th>
+        <th style="width:15%">Level</th>
+        <th style="width:20%">Date</th>
+        <th style="width:20%">Meeting with</th>
+        <th style="width:15%">Status</th>
+        <th style="width:15%">Action</th>
       </tr>
 
       <% current_user.offers.each do |offer| %>
@@ -30,15 +30,15 @@
 
   <div class="dashboard-container">
     <h3>Booking summary</h3>
-    <table class="table table-striped">
+    <table class="table table-striped" ,style="width:100%">
 
       <tr>
-        <th>Language</th>
-        <th>Level</th>
-        <th>Date</th>
-        <th>Meeting with</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th style="width:15%">Language</th>
+        <th style="width:15%">Level</th>
+        <th style="width:20%">Date</th>
+        <th style="width:20%">Meeting with</th>
+        <th style="width:15%">Status</th>
+        <th style="width:15%">Action</th>
       </tr>
 
       <% current_user.bookings.each do |booking| %>
