@@ -2,9 +2,9 @@
   <div class="profile-container">
     <h1><strong>Profile details</strong></h1>
       <% if @offer.user.photo.key.nil?  %>
-      <%=  image_tag "default_profil.png"  %>
+      <%=  image_tag "default_profil.png", width: "100%"  %>
       <% else  %>
-      <%=  cl_image_tag @offer.user.photo.key  %>
+      <%=  cl_image_tag @offer.user.photo.key, width: "100%"  %>
       <% end  %>
     <p>
       <%= @offer.user.first_name %>
