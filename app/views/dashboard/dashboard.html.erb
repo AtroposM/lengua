@@ -19,7 +19,7 @@
         <td><%= offer.level %></td>
         <td><%= offer.date %></td>
         <td><%= offer.user.first_name %></td>
-        <td>Pending</td>
+        <td><%= offer.bookings.present? ? 'Booked' : 'Open for booking' %></td>
         <td>
           <%= link_to 'Edit', edit_offer_path(offer.id), class:'btn btn-primary' %>
         </td>
@@ -47,7 +47,7 @@
         <td><%= booking.offer.level %></td>
         <td><%= booking.offer.date %></td>
         <td><%= booking.offer.user.first_name %></td>
-        <td>Completed</td>
+        <td><%= booking.status? ? 'Pending' : 'Completed' %></td>
         <td>
           <%= link_to 'Cancel', booking, method: :delete, class:'btn btn-primary',data: {confirm: "Are you sure to cancel?"} %>
         </td>

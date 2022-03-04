@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @booking.offer = offer
     @booking.user = current_user
 
+
     authorize @booking
 
     if @booking.save!
@@ -35,6 +36,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.destroy
     redirect_to dashboard_url, notice: "Booking was cancelled"
+
   end
 
 
