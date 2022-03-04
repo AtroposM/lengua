@@ -32,24 +32,9 @@ users_data['results'].each do |user_data|
 end
 
 
-#puts 'creating 50 fake users...'
-#50.times do
-#  user = User.new(
-#    first_name: Faker::Movies::StarWars.character,
-#    last_name: Faker::Creature::Animal.name,
-#    address: "#{Faker::Address.building_number} #{Faker::Address.street_name} ",
- #   email: Faker::Internet.email,
- #   password: '123456'
- # )
- # user.save
-#end
-
-
-
-
- puts "Creating 3 more user"
- alice = User.create!(first_name: 'Alice', last_name: 'Monet', address: '19 Rue des Petits Champs', email: 'alice@gmail.com', password:'123456')
-file = URI.open('https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80')
+puts "Creating 3 more user"
+alice = User.create!(first_name: 'Alice', last_name: 'Monet', address: '19 Rue des Petits Champs', email: 'alice@gmail.com', password:'123456')
+file = URI.open('http://ghost.skillshub.info/content/images/2017/01/profile-girl-square.png')
 alice.photo.attach(io: file, filename: 'alice.png', content_type: 'image/png')
 jean = User.create!(first_name: 'Jean', last_name: 'Dupont', address: '24 Rue de Sèvres', email: 'jean@gmail.com', password:'123456')
 chloe = User.create!(first_name: 'Chloe', last_name: 'Barbeau', address: '20 Rue Dussoubs', email: 'chloe@gmail.com', password:'123456')
