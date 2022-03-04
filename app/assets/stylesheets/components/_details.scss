@@ -31,6 +31,9 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin: 12px;
+  padding: 12px;
+  margin-top: 0;
 }
 
 .card-product img {
@@ -58,10 +61,18 @@
 }
 
 .styles-title {
-    font-size: 36px;
+    font-size: 2px;
     font-weight: 700;
-    line-height: 1.25;
-    letter-spacing: 1px;
+    line-height: 3.25;
+    letter-spacing: 2px;
     text-align: center;
-    padding: 0 25px;
+    padding: 13px;
+    background-color: #E7E4E0;
+    border-radius: 9px;
+    margin: 25px;
+
+  .buttons_offer {
+    padding-top: 22px;
+  }
+
 }
