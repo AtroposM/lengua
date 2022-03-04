@@ -7,6 +7,7 @@
 </div>
 <div class="row row--no-padding">
   <div class="col-3 col-md-6 col--padding">
+  <% if @offers.count > 0 %>
     <% @offers.each do |offer| %>
       <div class="card-product">
         <img src="https://source.unsplash.com/random" />
@@ -16,6 +17,12 @@
           <p><strong>Date or day: </strong><%= offer.date %>  </p>
           <p><strong>Duration: </strong><%= offer.duration %> </p>
           <p><strong>Address</strong><%= offer.address %> </p>
+            <% if @bookings.where(offer_id: offer.id).empty? %>
+              <p style="color:red"> Check the details </p>
+            <% else %>
+              <p style="color:red"> Booking Status: Sorry, it has been booked....</p>
+            <% end %>
+          <span class="card-title ">Offer created by <%= offer.user.first_name %></span>
           <%= link_to 'Details', offer_path(offer), class: "btn btn-ghost" %> <% if policy(offer).edit?  %>
           <%= link_to 'Update', edit_offer_path(offer),class: "btn btn-ghost" %>
           <% end  %>
@@ -25,6 +32,11 @@
         </div>
       </div>
     <% end  %>
+  <% else %>
+  <p>No matches </p>
+  <%= link_to 'Search again', root_path %>
+<% end %>
+
 </div>
 <div class="col-3 col-md-6 map-wrapper">
   <div id="map"

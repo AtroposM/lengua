@@ -44,7 +44,7 @@
     <div class="btn-container">
       <%= link_to 'Back', offers_path, class: "btn btn-primary" %>
 
-    <div class="container">
+      <div class="container">
       <%= simple_form_for [@offer,@booking] do |f| %>
         <%= f.hidden_field :language, value: @offer.language%>
         <%= f.hidden_field :level, value: @offer.level%>
@@ -54,7 +54,10 @@
 
         <%= f.hidden_field :user, value: @offer.user.id%>
 
-        <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
+        <% if current_user != @offer.user  %>
+          <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
+        <% end %>
+
       <% end %>
      </div>
     </div>
