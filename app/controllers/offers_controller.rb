@@ -20,6 +20,7 @@ class OffersController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: {offer: offer})
       }
     end
+    @bookings = Booking.all
   end
 
   def show
