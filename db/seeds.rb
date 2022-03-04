@@ -10,26 +10,36 @@ Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
+url = "https://randomuser.me/api/?results=50"
+users_data = JSON.parse(open(url).read)
+
+
 
 
 puts 'creating 50 fake users...'
-50.times do
+users_data['results'].each do |user_data|
   user = User.new(
-    first_name: Faker::Movies::StarWars.character,
-    last_name: Faker::Creature::Animal.name,
-    address: "#{Faker::Address.building_number} #{Faker::Address.street_name} ",
-    email: Faker::Internet.email,
+    first_name: user_data['name']['first'],
+    last_name: user_data['name']['last'],
+    address: "#{user_data['location']['street']['number']} #{user_data['location']['street']['namne']} #{user_data['location']['city']} #{user_data['location']['state']}
+               #{user_data['location']['country']} #{user_data['location']['postcode']} ",
+    email: user_data['email'],
     password: '123456'
   )
+  file = URI.open("#{user_data['picture']['large']}")
+  user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: 'image/png')
   user.save
 end
 
-puts "Creating 3 more user"
-alice = User.create!(first_name: 'Alice', last_name: 'Monet', address: '19 Rue des Petits Champs', email: 'alice@gmail.com', password:'123456')
+
+puts "Creating 5 more user"
+alice = User.create!(first_name: 'Alice', last_name: 'Monet', address: 'rue de verneuil paris', email: 'alice@gmail.com', password:'123456')
 file = URI.open('http://ghost.skillshub.info/content/images/2017/01/profile-girl-square.png')
 alice.photo.attach(io: file, filename: 'alice.png', content_type: 'image/png')
-jean = User.create!(first_name: 'Jean', last_name: 'Dupont', address: '24 Rue de Sèvres', email: 'jean@gmail.com', password:'123456')
-chloe = User.create!(first_name: 'Chloe', last_name: 'Barbeau', address: '20 Rue Dussoubs', email: 'chloe@gmail.com', password:'123456')
+jean = User.create!(first_name: 'Jean', last_name: 'Dupont', address: '24 rue de sevres paris', email: 'jean@gmail.com', password:'123456')
+chloe = User.create!(first_name: 'Chloe', last_name: 'Barbeau', address: '20 rue du store paris', email: 'chloe@gmail.com', password:'123456')
+jacques = User.create!(first_name: 'Jacques', last_name: 'Dupont', address: '24 rue du temple paris', email: 'jacques@gmail.com', password:'123456')
+caroline = User.create!(first_name: 'Caroline', last_name: 'Martin', address: '20 boulevard saint-germain 75006 paris', email: 'caroline@gmail.com', password:'123456')
 puts "#{User.count} users created"
 
 language = ['French', 'English', 'Spanish', 'Chinese', 'Japanese', 'German', 'Arabic']
