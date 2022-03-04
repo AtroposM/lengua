@@ -1,4 +1,4 @@
-.card-product {
+.card-product-home {
   overflow: hidden;
     height: 240px;
     width: 408px;
@@ -9,19 +9,19 @@
   margin: 17px;
 }
 
-.card-product img {
+.card-product-home img {
   height: 100%;
   width: 140px;
   object-fit: cover;
 }
 
-.card-product h2 {
+.card-product-home h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-product p {
+.card-product-home p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -29,7 +29,7 @@
   margin-top: 8px;
 }
 
-.card-product .card-product-infos {
+.card-product-home .card-product-infos-home {
   padding: 16px;
 }
 

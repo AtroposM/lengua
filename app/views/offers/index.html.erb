@@ -1,5 +1,6 @@
 <div class="styles-title">
   <h1> Here are Lengua users that are happy to help you learn! </h1>
+
   <% if policy(Offer).new? %>
     <h5>Do you also have time to share? Make a <%= link_to 'new offer!', new_offer_path %></h5>
     <br>
@@ -17,22 +18,19 @@
       <% end  %>
         <div class="card-product-infos">
           <h2><strong>Language: </strong><%= offer.language %></h2>
+          <span class="card-title ">Offer created by <%= offer.user.first_name %></span>
           <p><strong>Level: </strong><%= offer.level %> </p>
           <p><strong>Date or day: </strong><%= offer.date %>  </p>
           <p><strong>Duration: </strong><%= offer.duration %> </p>
-          <p><strong>Address</strong><%= offer.address %> </p>
-            <% if @bookings.where(offer_id: offer.id).empty? %>
-              <p style="color:red"> Check the details </p>
-            <% else %>
-              <p style="color:red"> Booking Status: Sorry, it has been booked....</p>
-            <% end %>
-          <span class="card-title ">Offer created by <%= offer.user.first_name %></span>
+          <p><strong>Address: </strong><%= offer.address %> </p>
+          <div class= "buttons_offer">
           <%= link_to 'Details', offer_path(offer), class: "btn btn-ghost" %> <% if policy(offer).edit?  %>
           <%= link_to 'Update', edit_offer_path(offer),class: "btn btn-ghost" %>
           <% end  %>
           <% if policy(offer).destroy?  %>
           <%= link_to 'Destroy', offer, method: :delete,class: "btn btn-ghost", data: {confirm: "Are you sure?"} %>
           <% end  %>
+          </div>
         </div>
       </div>
     <% end  %>
